@@ -1,0 +1,146 @@
+import random
+import easygui as h
+import sys
+import pygame
+
+
+class gal():
+    def __init__(self, name):
+        self.time=0
+        self.name=name
+    def fuck(self, this=1):
+        buy = h.ccbox("在做之前要不要买避孕套呢？", choices=["要", "不要"])
+        '''hide=h.ccbox("我们该躲在哪里做呢？", choices=["公共教室", "文印室"])'''
+        self.time+=this
+        if self.time<=5:
+            h.msgbox(self.name+"觉得舒服，很激烈地动了起来", ok_button="继续")
+        elif self.time<=10:
+            h.msgbox(self.name+"快要不行了，她已经去了很多次了", ok_button="继续")
+        else:
+            h.msgbox(self.name+ "不行了，她的下面已经被撑满了", ok_button="继续")
+        '''self.hide(hide)'''
+        self.preg(buy)
+    def catch(self):
+        x=random.randint(1,10)
+        if x<=3:
+            h.msgbox("rex走了进来，把我和"+ self.name+"捉奸在床", ok_button="继续")
+            self.detention()
+        else:
+            h.msgbox("我提了提裤子，离开了床，回头望一眼，"+self.name+"躺在床上，白色的液体缓缓从她的下面流出来", ok_button="继续")
+    def blow(self):
+        status=h.ccbox("深入吗？", choices=["深入","不深入"])
+        if status==1:
+            h.msgbox("我的肉棒深入了"+self.name+"的喉咙，她发出了细微的呻吟", ok_button="继续")
+        if status==0:
+            h.msgbox("凑弟弟，我是什么男人？这样拷问自己后，我还是准备深入", ok_button="继续")
+            h.msgbox("我的肉棒深入了" + self.name + "的喉咙，她发出了细微的呻吟", ok_button="继续")
+    def preg(self, buy):
+        y=random.randint(1,10)
+        if buy==1:
+            if y<=1:
+                h.msgbox("避孕套没起到作用", ok_button="继续")
+                h.msgbox(self.name + "拿着验孕棒给我看，上面是两条黑杠", ok_button="继续")
+        else:
+            if y<=5:
+                h.msgbox(self.name+"拿着验孕棒给我看，上面是两条黑杠", ok_button="继续")
+    def detention(self):
+        h.msgbox("Rex给我了一个detention，并且把我的父母叫来了学校", ok_button="继续")
+        h.msgbox("我被父母狠狠地教育了一遍，并且他们联系了"+self.name+"的家长", ok_button="继续")
+        h.msgbox("我知道我们俩的关系没办法再继续了", ok_button="继续")
+        h.msgbox("完结", ok_button="结束")
+        sys.exit(0)
+    def hide(self,x):
+        y = random.randint(1, 10)
+        if x==1:
+            if y<=2:
+                self.catch()
+                self.see()
+        if x==2:
+            if y<=8:
+                self.catch()
+    def see(self):
+        h.msgbox("有两个同班同学走进了公共教室，他们看到了你和"+self.name+"在进行着不可描述的事情", ok_button="继续")
+
+
+
+name_1=h.enterbox(msg="你是？")
+if name_1==None:
+    h.msgbox("请输入姓名！")
+    name_1 = h.enterbox(msg="你是？")
+    if name_1==None:
+        h.msgbox("你玩我呢？")
+        sys.exit(0)
+
+
+
+
+h.msgbox(msg="这是一个平静的一天，我又像过去每一天一样背着书包，打开书本，读着我和以前一样完全读不懂的书", title="故事开始", ok_button="继续")
+h.msgbox(msg='“' + name_1 + '，今天你还是一个人啊！”我的好友无趣地撇了我一眼，继续在手机上面和他的女朋友聊天',ok_button="继续")
+h.msgbox(msg='女朋友？',ok_button="继续")
+h.msgbox(msg='女朋友？',ok_button="继续")
+h.msgbox(msg='女朋友？',ok_button="继续")
+h.msgbox(msg='女朋友？那种东西有存在的必要吗？老子一个人好得很！可是……可是……',ok_button="继续")
+h.msgbox(msg='我又突然有点犹豫…… 我…… 我…… 我…… 其实一直都想要一个女朋友。我还暗恋着一个我们学校的女孩，也不能说是暗恋吧，只是她好看！嗯！一定是这样的！')
+npy = h.enterbox(msg='我记得我暗恋的人名字好像叫……叫……：')
+h.msgbox(msg=npy+'，对啊，她可是我现在为数不多的支撑我活下去的希望啊……', ok_button="继续")
+h.msgbox(msg=npy+'，她，真的可以说是在我失魂落魄的时候拯救了我', ok_button="继续")
+h.msgbox(msg='还记得我在很久以前，没有人陪着我，我一直是一个人，无依无靠，我一个人宅在家里打游戏，我一个人做题目，我一个人吃晚饭，我一个人戴着耳机上下学，一直……，一直……，我都是一个人', ok_button="继续")
+h.msgbox(msg='我确实是有很多死党，前面那个叫孙浩二，我的很多死党都和他一样，都有女朋友。说好什么通宵打一晚上游戏，结果都鸽了我去陪女朋友去了', ok_button="继续")
+h.msgbox(msg='每天都是这样无聊地活着，这样的人生还有什么意思呢？', ok_button="继续")
+h.msgbox(msg='可是她的出现，即使是转瞬即逝的几秒，也让感到了温暖', ok_button="继续")
+h.msgbox(msg='“早上好呀~'+ name_1 +'同学”',ok_button="继续")
+h.msgbox(msg='这便是我们的第一次相遇，我只记得那时，她笑得很甜，真的很甜，甜的让我仿佛有那么几秒钟忘记了我心中的孤独',ok_button="继续")
+h.msgbox(msg='但是我也太窝囊了吧！ 这样的机会我都没有好好打招呼，我甚至没有向她问一声好…… 我…… 我……', ok_button="继续")
+h.msgbox(msg='我真是个窝囊废！', ok_button="继续")
+h.msgbox(msg='但是'+npy+'，啊，她真的是个大好人呀~', ok_button="继续")
+h.msgbox(msg='自那以后，我的生活中仿佛也多了一点乐趣，那就是每天看看'+npy+'在干什么', ok_button="继续")
+h.msgbox(msg='等等……等等……现在想想，我这样不就和痴汉一样吗？？？？', ok_button="继续")
+h.msgbox(msg='但我顿时打消了这种念头，我感觉每一次偷看她的时候，她的侧脸永远是那么的美', ok_button="继续")
+h.msgbox(msg='即使是有时候，我被她发现了，她也只是看着我的眼睛，与我相视一笑', ok_button="继续")
+h.msgbox(msg='每天 每天 她总是元气满满的……她的那一份乐观也让我感到了快乐', ok_button="继续")
+h.msgbox(msg='每次打开微信，都能看见她在微信上面，在班级群里面，当大家的开心果', ok_button="继续")
+h.msgbox(msg='我决定了！哪怕是为了'+npy+'，我也一定要活下去！', ok_button="继续")
+h.msgbox(msg='该死！' + npy + '，她的笑容永远是那么美丽！她的行为总是那么优雅！可是我呢，我只是一个懦夫罢了……', ok_button="继续")
+h.msgbox(msg='下一次，不，今天！', ok_button="继续")
+h.msgbox(msg='我一定要向她表白！', ok_button="继续")
+h.msgbox(msg=npy+'走进了教室，身上带着一丝香味，是女生独有的体香', ok_button="继续")
+h.msgbox(msg='但她的味道是独特的，是那种，只有她身上所带有的香味，香里透着甜', ok_button="继续")
+h.msgbox(msg=npy+'真的……真的是太完美了！！', ok_button="继续")
+h.msgbox(msg='我这样的懦夫，怎么会……怎么会……配得上她这样的美貌和性格呢？？', ok_button="继续")
+h.msgbox(msg='再一次，我感到了我自己有多废', ok_button="继续")
+h.msgbox(msg='就这样，我下定了决心，今天至少，至少把她，'+npy+'，约出来吧', ok_button="继续")
+h.msgbox(msg='我打开了微信，翻开联系人那一页，划了一下都不到就到底了，一看，只有50位联系人', ok_button="继续")
+h.msgbox(msg='“不愧是我，除了从小到大的死党和亲戚，微信上没有一个多余的人，爷在QQ群里和沙雕网友谈笑风生，那比我们班的同学不知道强到哪里去了”我自嘲着', ok_button="继续")
+h.msgbox(msg='我的手又划回了聊天的界面，看着无数个群聊，大多还是学校里的群聊', ok_button="继续")
+h.msgbox(msg='我寻找到了班级群聊，一打开就看见了'+npy+'发的可爱的表情包', ok_button="继续")
+h.msgbox(msg='可再美丽的表情包，哪有她笑起来好看呢？', ok_button="继续")
+h.msgbox(msg='我鼓起勇气，点开了她的头像，点下了“添加好友”的按键', ok_button="继续")
+h.msgbox(msg='哦，对了，差点忘记介绍了，'+npy+'还是一个学霸，还会编程，我这次就打算打着学习的幌子加她好友', ok_button="继续")
+h.msgbox(msg='添加信息填什么好呢？', ok_button="继续")
+h.msgbox(msg='突然我看见上次微信记忆的添加信息“我是你爸爸”，不禁笑出了声，想起来那还是我进入高中以后加孙浩二的微信的时候', ok_button="继续")
+h.msgbox(msg='不对，现在不是想这个的时候，我应该认真填！', ok_button="继续")
+h.msgbox(msg='我……是……'+name_1+'，我想问你编程的问题，行吗', ok_button="继续")
+
+a=gal(npy)
+
+
+'''
+a.fuck()  干
+a.blow()  口
+
+
+
+'''
+
+pygame.init()
+for event in pygame.event.get():
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_esc:
+            sys.exit(0)
+
+
+
+
+
+
+
